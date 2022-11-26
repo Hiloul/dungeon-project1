@@ -24,10 +24,10 @@ class GameController extends Controller
      */
     public function create(Request $request)
     {
-        return view('trips.create', [
+        return view('personnage.create', [
             'nom' => $request->old('nom'),
-            'age' => $request->old('age'),
-            'pays' => $request->old('pays'),
+            'description' => $request->old('description'),
+            'specialite' => $request->old('specialite'),
         ]);
     }
 
@@ -41,15 +41,15 @@ class GameController extends Controller
     {
         $request->validate([
             'nom' => [ 'required', 'string', 'regex:/^[a-zA-Z]+$/' ], // 'required|string'
-            'age' => 'required|numeric',
-            'pays' => [ 'required', Rule::in(['france', 'espagne']) ], // 'required|in:france,espagne'
+            'description' => [ 'required', 'string', 'regex:/^[a-zA-Z]+$/' ],
+            // 'specialite' => [ 'required', Rule::in(['Druide', 'Archer']) ], // 'required|in:france,espagne'
         ]);
-        $voyage = [];
-        $voyage['nom'] = $request->input('nom');
-        $voyage['age'] = $request->input('age');
-        $voyage['pays'] = $request->input('pays');
+        $perso = [];
+        $perso['nom'] = $request->input('nom');
+        $perso['description'] = $request->input('description');
+        $perso['specialite'] = $request->input('specialite');
 
-        dd($voyage);
+        dd($perso);
     }
 
     /**

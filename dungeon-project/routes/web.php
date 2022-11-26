@@ -17,15 +17,12 @@ use App\Http\Controllers\GameController;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Route::get('/{id}', function($id) {
     //
 })->where('id', '[0-9]+');
 
-// Route::resource('/trip', TripController::class);
-Route::get('/trip/create', [GameController::class, 'create'])->name('trip.create');
-Route::post('/trip', [GameController::class, 'store'])->name('trip.store');
+// Route::resource('/trip', GameController::class);
+Route::get('/personnage/create', [GameController::class, 'create'])->name('personnage.create');
+Route::post('/personnage', [GameController::class, 'store'])->name('personnage.store');
 

@@ -12,7 +12,7 @@
         @yield('main')
     </main>
     <footer>
-        MonTrip &copy; 2022
+        Dungeon-South &copy;Hilel 2022
     </footer>
 </body>
 </html>
