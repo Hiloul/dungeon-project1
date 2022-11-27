@@ -11,13 +11,13 @@
                 <li>{{ $error }}</li>
             @endforeach --}}
             @if($errors->has('nom'))
-                <li>Il y a une erreur sur le champ Nom</li>
+                <li>Erreur, le pseudo est vide</li>
             @endif
             @if($errors->has('description'))
-                <li>Il y a une erreur sur le champ Description</li>
+                <li>Erreur, description vide</li>
             @endif
             @if($errors->has('specialite'))
-                <li>Il y a une erreur sur le champ Specialite</li>
+                <li>Erreur, spécialité non choisie</li>
             @endif
         </ul>
     @endif

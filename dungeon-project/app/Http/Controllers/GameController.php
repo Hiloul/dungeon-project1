@@ -23,6 +23,7 @@ class GameController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create(Request $request)
+    
     {
         return view('personnage.create', [
             'nom' => $request->old('nom'),
@@ -40,14 +41,27 @@ class GameController extends Controller
         $request->validate([
             'nom' => [ 'required', 'string', 'regex:/^[a-zA-Z]+$/' ], // 'required|string'
             'description' => [ 'required', 'string', 'regex:/^[a-zA-Z]+$/' ],
-            // 'specialite' => [ 'required', Rule::in(['Druide', 'Archer']) ], // 'required|in:france,espagne'
+            'specialite' => [ 'required'],
         ]);
         $perso = [];
         $perso['nom'] = $request->input('nom');
         $perso['description'] = $request->input('description');
         $perso['specialite'] = $request->input('specialite');
-
-        dd($perso);
+        
+        // dd($perso);
+        // // return $perso;  
+        // mt_srand((float) microtime()*1000000);
+        // echo mt_rand(20, 50);
+        echo rand(0, 14);
+        
+        return view('personnage.store', [
+            'nom' => $request->old('nom'),
+            'description' => $request->old('description'),
+            'specialite' => $request->old('specialite'),
+            
+        ]);
+       
+       
     }
 
     /**
