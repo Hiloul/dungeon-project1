@@ -2,7 +2,9 @@
 
 @section('title', 'Création d\'un personnage')
 
-@section('main')
+
+@section('principale')
+
     @if ($errors->any())
         <ul>
             {{-- @foreach ($errors->all() as $error)
@@ -21,8 +23,8 @@
     @endif
     <form action="{{ route('personnage.store') }}" method="POST">
         @csrf
-        <label for="nom">Nom :</label>
-        <input type="text" name="nom" id="nom" value="{{ $nom }}" placeholder="Votre nom" />
+        <label for="nom">Pseudo :</label>
+        <input type="text" name="nom" id="nom" value="{{ $nom }}" placeholder="Votre pseudo" />
         <label for="description">Description :</label>
         <input type="text" name="description" id="description" value="{{ $description }}" placeholder="Description" />
         <label for="specialite">Specialite :</label>
@@ -38,6 +40,6 @@
 
 
         {{-- <button>Envoyer</button> --}}
-        <input type="submit" value="Envoyer" />
+        <input type="submit" value="Envoyer" id="button" />
     </form>
 @endsection
