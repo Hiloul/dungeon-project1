@@ -42,4 +42,12 @@
         {{-- <button>Envoyer</button> --}}
         <input type="submit" value="Envoyer" id="button" />
     </form>
+    <form action="{{ route('personnage.invite') }}" method="get">
+    {{ csrf_field() }}
+    <input type="email" name="email" />
+    <button type="submit">Inviter</button>
+</form>
+<p>Hi,</p>
+<p>Quelqu'un vous a invité  .</p>
+<a href="{{ route('personnage.invite') }}">Click here</a> to activate!
 @endsection

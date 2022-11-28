@@ -49,7 +49,7 @@ class GameController extends Controller
         $perso['specialite'] = $request->input('specialite');
         
         // dd($perso);
-        // // return $perso;  
+           
         // mt_srand((float) microtime()*1000000);
         // echo mt_rand(20, 50);
         echo rand(0, 14);
@@ -58,6 +58,7 @@ class GameController extends Controller
             'nom' => $request->old('nom'),
             'description' => $request->old('description'),
             'specialite' => $request->old('specialite'),
+            'perso' => $request->old('perso')
             
         ]);
        
@@ -100,4 +101,8 @@ class GameController extends Controller
     {
         //
     }
+    public function invite()
+{
+    return view('personnage.invite');
+}
 }

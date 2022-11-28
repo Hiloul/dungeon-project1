@@ -22,9 +22,10 @@ Route::get('/{id}', function($id) {
     //
 })->where('id', '[0-9]+');
 
-Route::resource('/personnage', GameController::class);
+// Route::resource('/personnage', GameController::class);
 Route::get('/personnage/create', [GameController::class, 'create'])->name('personnage.create');
 Route::post('/personnage', [GameController::class, 'store'])->name('personnage.store');
+Route::get('/personnage/invite', [GameController::class, 'invite'])->name('personnage.invite');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
