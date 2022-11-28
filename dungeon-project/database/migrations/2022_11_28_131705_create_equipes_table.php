@@ -28,13 +28,13 @@ return new class extends Migration
     {
         Schema::dropIfExists('equipes');
     }
-    public function up()
-{
-    Schema::create('users', function (Blueprint $table) {
-        $table->increments('id');
-        $table->string('email')->unique();
-        $table->rememberToken();
-        $table->timestamps();
-    });
-}
+//     public function up()
+// {
+//     Schema::create('users', function ($table) {
+//         $table->increments('id');
+//         $table->string('email')->unique();
+//         $table->rememberToken();
+//         $table->timestamps();
+//     });
+// }
 };
