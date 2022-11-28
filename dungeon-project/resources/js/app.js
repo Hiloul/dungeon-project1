@@ -6,5 +6,3 @@ window.Alpine = Alpine;
 
 Alpine.start();
 
-
-// cque jai enlever du main app blade {{ $slot }} 

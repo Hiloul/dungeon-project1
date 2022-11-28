@@ -28,8 +28,25 @@
         <input type="submit" value="Generer statistiques">
     </form>
 
+    <input type="text" placeholder="Enter your pseudo" id="pseudo">
 
- 
+<select id="type">
+    <option value="archer">archer</option>
+    <option value="giant">giant</option>
+    <option value="goblin">goblin</option>
+    <option value="wizard">wizard</option>
+    <option value="barbarian">barbarian</option>
+</select>
+<input type="submit" value="Submit">
+</form>
+
+<div id="userList"></div>
+
+<!-- 
+<script defer src="{{asset('/js/scriptcard.js')}}"></script> -->
+
+<!-- <script defer src="/dungeon-project/public/js/scriptcard.js" ></script> -->
+
     
 </div>
 

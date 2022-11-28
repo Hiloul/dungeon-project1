@@ -11,7 +11,13 @@ class GameController extends Controller
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
+     * 
      */
+
+    public function invite()
+    {
+        return view('personnage.invite');
+    }
     public function index()
     {
         //
@@ -60,6 +66,7 @@ class GameController extends Controller
             'specialite' => $request->old('specialite'),
             'perso' => $request->old('perso')
             
+            
         ]);
        
        
@@ -101,8 +108,5 @@ class GameController extends Controller
     {
         //
     }
-    public function invite()
-{
-    return view('personnage.invite');
-}
+ 
 }
