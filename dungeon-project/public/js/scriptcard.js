@@ -12,8 +12,8 @@ function showPlayerCardListInDOM(){
         playerCard.classList.add("player")
     
         playerCard.innerHTML = `
-            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/${player.type}.png" />
-            <p>${player.description()}</p>
+            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/${player.specialite}.png" />
+            <p>${player.nom()}</p>
             <p class="level">lvl: ${player.level}</p>
             <div class="xp">
                 xp: ${player.xp}
@@ -43,28 +43,29 @@ showPlayerCardListInDOM()
 // select form
 const form = document.querySelector('form')
 // add event listener form submit
-form.addEventListener('submit', function(event){
+form.addEventListener('generer', function(event){
     event.preventDefault()
-    console.log("form submit")
+    console.log("form generer")
     // select input
-    const inputPseudo = document.querySelector('#pseudo')
+    const inputNom = document.querySelector('#nom')
+    
     // get value of input
-    const pseudoValue = inputPseudo.value
-
+    const nomValue = inputNom.value
+   
     // select #type
-    const selectType = document.querySelector('#type')
+    const selectSpecialite = document.querySelector('#specialite')
     // get value of #type
-    const typeValue = selectType.value
-    console.log("typeValue : ", typeValue)
+    const specialiteValue = selectSpecialite.value
+    console.log("specialiteValue : ", specialiteValue)
     
 
     const player = {
-        pseudo: pseudoValue,
-        type: typeValue, // replace value in attribut type in object
+        nom: NomValue,
+        specialite: specialiteValue, // replace value in attribut type in object
         level: 1,
         xp: 0,
         description: function(){
-            return `${this.pseudo} is a ${this.type}`
+            return `${this.nom}`
         },
         upgradeXp: function(){
             this.xp += 10

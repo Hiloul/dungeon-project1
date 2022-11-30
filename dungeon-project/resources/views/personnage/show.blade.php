@@ -1,10 +1,14 @@
 @extends('layouts.app')
 
-@section('title', 'L\'article '.$article->title)
+@section('title', 'L\'article '.$perso->nom)
 
-@section('main')
-    <h1>{{ $article->title }}</h1>
-    <p>{{ $article->content }}</p>
-    <p>{{ $article->author }}</p>
-    <p>{{ $article->followers }}</p>
+@section('principale')
+    <h1>{{ $perso->nom }}</h1>
+    <p>{{ $perso->description }}</p>
+    <p>{{ $perso->specialite }}</p>
+    <p>{{ $perso->magie }}</p>
+    <p>{{ $perso->force }}</p>
+    <p>{{ $perso->agilite }}</p>
+    <p>{{ $perso->intelligence }}</p>
+    <p>{{ $perso->pv }}</p>
 @endsection

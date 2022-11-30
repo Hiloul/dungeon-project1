@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
-        <script defer src="{{asset('/js/scriptcard.js')}}"></script>
+        
 
 
         <title>{{ config('app.name', 'Laravel') }}</title>
@@ -80,5 +80,6 @@ footer{text-align: center;
         Dungeon &copy;Hilel 2022
     </footer>
         </div>
+        
     </body>
 </html>

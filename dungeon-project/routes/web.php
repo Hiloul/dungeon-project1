@@ -23,10 +23,16 @@ Route::get('/{id}', function($id) {
     //
 })->where('id', '[0-9]+');
 
-// Route::resource('/personnage', GameController::class);
-Route::get('/personnage/create', [GameController::class, 'create'])->name('personnage.create');
+Route::resource('/personnage', GameController::class);
+Route::get('/personnage', [GameController::class, 'index'])->name('personnage.index');
+Route::get('/personnage/create', [GameController::class, 'create'])->name('personnage.create')->where('id', '[0-9]+');
 Route::post('/personnage', [GameController::class, 'store'])->name('personnage.store');
+Route::get('/personnage/{id}', [GameController::class, 'show'])->name('personnage.show');
 Route::get('/personnage/invite', [GameController::class, 'invite'])->name('personnage.invite');
+Route::get('/personnage/{id}/edit', [GameController::class, 'edit'])->name('personnage.edit');
+Route::put('/personnage/{id}', [GameController::class, 'update'])->name('personnage.update');
+Route::delete('/personnage/{id}', [GameController::class, 'destroy'])->name('personnage.destroy');
+Route::get('/personnage/factory', [GameController::class, 'factory']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');

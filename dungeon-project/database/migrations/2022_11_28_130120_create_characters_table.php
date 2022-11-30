@@ -17,6 +17,11 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->text('description');
+            $table->text('specialite');
+            $table->text('magie');
+            $table->text('force');
+            $table->text('agilite');
+            $table->text('intelligence');
             $table->unsignedBigInteger('user_id');
             $table->timestamps();
 

@@ -8,14 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class Character extends Model
 {
     use HasFactory;
-    protected $fillable = ['name', 'description', 'user_id'];
-
-    // Méthode "raccourci" de relation
-    public function user() {
-        return $this->belongsTo(User::class, "user_id", "id");
-    }
-    public function invite()
-    {
-        return view('personnage.invite');
-    }
+    protected $fillable = [
+        'nom',
+        'description',
+        'specialite',
+        'magie',
+        'force',
+        'agilite',
+        'intelligence',
+        'pv'
+        
+    ];
 }

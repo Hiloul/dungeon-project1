@@ -1,8 +1,6 @@
-
-
 @extends('layouts.app')
 
-@section('title', 'Liste des personnages')
+@section('title', 'Liste des articles')
 
 @section('main')
     @if(session()->has('message'))
@@ -11,7 +9,7 @@
         </div>
     @endif
     <ul>
-        @foreach ($personnages as $personnage)
+        @foreach ($persos as $perso)
             <li>{{ $perso->nom }}</li>
         @endforeach
     </ul>

@@ -14,7 +14,9 @@ class CharacterController extends Controller
      */
     public function index()
     {
-        //
+        return view('personne.index', [
+            'personnage' => Character::all()
+        ]);
     }
 
     /**
@@ -24,7 +26,7 @@ class CharacterController extends Controller
      */
     public function create()
     {
-        //
+        return view('personne.create');
     }
 
     /**
@@ -35,7 +37,27 @@ class CharacterController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nom' => 'required',
+            'description' => 'required',
+            'specialite' => 'required',
+            'magie' => 'required|integer',
+            'force' => 'required|integer',
+            'agilite' => 'required|integer',
+            'intelligence' => 'required|integer'
+        ]);
+        
+        $personnage = Character::create([
+            'nom' => $request->input('nom'),
+            'description' => $request->input('description'),
+            'specialite' => $request->input('specialite'),
+            'magie' => $request->input('magie'),
+            'force' => $request->input('force'),
+            'agilite' => $request->input('agilite'),
+            'intelligence' => $request->input('intelligence'),
+        ]);
+        $pageAccueil = route('personnage.index');
+        return redirect($pageAccueil)->with('message', 'Créer avec succès');
     }
 
     /**
@@ -46,14 +68,8 @@ class CharacterController extends Controller
      */
     public function show($id)
     {
-        // Sans méthode "raccourci" de relation 
-        //$character = Character::find($id);
-        //$user = User::where('id', $character->user_id)->first();
-
-        // Avec méthode "raccourci" de relation
-        $character = Character::find($id);
-        $user = $character->user; // Utilisation de la méthode "raccourci" de relation
-    
+        $perso = Character::findOrFail($id);
+        return view('personnage.show', [ 'perso' => $perso ]);
     }
 
     /**
@@ -64,7 +80,8 @@ class CharacterController extends Controller
      */
     public function edit($id)
     {
-        //
+        $perso = Character::findOrFail($id);
+        return view('personnage.edit', [ 'perso' => $perso ]);
     }
 
     /**
@@ -76,7 +93,36 @@ class CharacterController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // récupérer l'objet Blog correspondant à l'ID
+        $perso = Character::findOrFail($id);
+
+        // validation du formulaire
+        $request->validate([
+            'nom' => 'required',
+            'description' => 'required',
+            'specialite' => 'required',
+            'magie' => 'required|integer',
+            'force' => 'required|integer',
+            'agilite' => 'required|integer',
+            'intelligence' => 'required|integer'
+        ]);
+
+        // Mise à jour de l'objet
+        $perso->nom = $request->input('nom');
+        $perso->description = $request->input('description');
+        $perso->specialite = $request->input('specialite');
+        $perso->magie = $request->input('magie');
+        $perso->force = $request->input('force');
+        $perso->agilite = $request->input('agilite');
+        $perso->intelligence = $request->input('intelligence');
+        
+
+        // Enregistrement
+        $perso->save();
+
+        // redirection page ...
+        $pageAccueil = route('personnage.index');
+        return redirect($pageAccueil)->with('message', 'Mis à jour avec succès');
     }
 
     /**
@@ -87,6 +133,15 @@ class CharacterController extends Controller
      */
     public function destroy($id)
     {
-        //
+        try {
+            $perso = Character::findOrFail($id);
+            $perso->delete();
+            return redirect(route('personnage.index'))->with('message', 'Supprimé avec succès');
+        } catch(\Exception $error) {
+            return response($error, 404);
+        }
+    }
+    public function factory() {
+        $users = Character::factory()->count(3)->create();
     }
 }
