@@ -54,7 +54,7 @@
         <label for="agilite">Intelligence :</label>
         <input type="number" name="intelligence" readonly value="{{$intelligence}}" placeholder="INT" id="intelligence">
         <label for="pv">PV :</label>
-        <input type="number" name="pv" readonly value="{{$pv}}" placeholder="pv" id="pv">
+        <input v-model="generate" type="number" name="pv" readonly value="{{$pv}}" placeholder="pv" id="pv">
         <button @click="genererInt">Générer</button>
         {{-- <button>Envoyer</button> --}}
         <input type="submit" value="Envoyer" id="button" />

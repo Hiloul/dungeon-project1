@@ -18,15 +18,9 @@
 
 @section('principale')
 <div class="cadperso">
-    <h1>Fiche personnage(s)</h1>
-    <h3>Nom du personnage: {{ $perso->nom }}</h3>
+    <h1>Fiche Equipe</h1>
+    <h3>Nom de l'équipe: {{ $perso->nom }}</h3>
     <p>Description: {{ $perso->description }}</p>
-    <p> Spécialité: {{ $perso->specialite }}</p>
-    <p>Caracteristiques</p>
-    <p>MAG: {{ $perso->magie }}</p>
-    <p>FOR: {{ $perso->force }}</p>
-    <p>AGI: {{ $perso->agilite }}</p>
-    <p>INT: {{ $perso->intelligence }}</p>
-    <p>PV: {{ $perso->pv }}</p>
+    <p> Nombres de places: {{ $perso->specialite }}</p>
     </div>
 @endsection

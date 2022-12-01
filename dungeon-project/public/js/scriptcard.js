@@ -1,25 +1,22 @@
 const genererInt = {
     methods: {
       createTask: function () {
-       this.listOfTodo.push(this.todoTask);
-       this.todoTask = "";
+       this.listOfTodo.push(this.generate);
+       this.generate = "";
       }
     },
  
     data() {
       return {
         // addTask: ["COUCOU"],
-        todoTask:"",
-        listOfTodo:[],
-        listOfDoing:[],
-        listOfDone:[],
+        generate:"",
         btn:""
 
       };
     },
   };
 
-Vue.createApp(listTask).mount("#root");
+
 
 
 

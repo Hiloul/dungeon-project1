@@ -9,15 +9,11 @@ class Equipe extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'user_id',
+        'group_id',
         'nom',
         'description',
-        'specialite',
-        'magie',
-        'force',
-        'agilite',
-        'intelligence',
-        'pv'
+        'nombreplace'
+        
         
     ];
 }

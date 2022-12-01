@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Validation\Rule;
 use Illuminate\Http\Request;
 use App\Models\Character;
-use Illuminate\Support\Facades\Redirect;
+
 
 class GameController extends Controller
 {
@@ -92,12 +91,12 @@ class GameController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request)
     {
-        $perso = Character::findOrFail($id);
-        return view('personnage.edit', [ 'perso' => $perso ]);
+        return view('profile.edit', [
+            'user' => $request->user(),
+        ]);
     }
-
     /**
      * Update the specified resource in storage.
      *
