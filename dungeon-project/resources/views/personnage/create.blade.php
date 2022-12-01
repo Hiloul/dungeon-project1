@@ -29,6 +29,7 @@
 
     <form action="{{ route('personnage.store') }}" method="POST">
         @csrf
+    
         <label for="nom">Pseudo :</label>
         <input type="text" name="nom" value="" id="nom" placeholder="Votre pseudo" />
         <label for="description">Description :</label>

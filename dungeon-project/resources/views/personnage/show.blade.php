@@ -1,14 +1,31 @@
 @extends('layouts.app')
 
+<style>
+    
+    
+.cadperso{
+    border: 2px black solid;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+
+}
+</style>
+
 @section('title', 'L\'article '.$perso->nom)
 
 @section('principale')
-    <h1>{{ $perso->nom }}</h1>
-    <p>{{ $perso->description }}</p>
-    <p>{{ $perso->specialite }}</p>
-    <p>{{ $perso->magie }}</p>
-    <p>{{ $perso->force }}</p>
-    <p>{{ $perso->agilite }}</p>
-    <p>{{ $perso->intelligence }}</p>
-    <p>{{ $perso->pv }}</p>
+<div class="cadperso">
+    <h1>Nom du personnage: {{ $perso->nom }}</h1>
+    <p>Description: {{ $perso->description }}</p>
+    <p> Spécialité: {{ $perso->specialite }}</p>
+    <p>Caracteristiques</p>
+    <p>MAG: {{ $perso->magie }}</p>
+    <p>FOR: {{ $perso->force }}</p>
+    <p>AGI: {{ $perso->agilite }}</p>
+    <p>INT: {{ $perso->intelligence }}</p>
+    <p>PV: {{ $perso->pv }}</p>
+    </div>
 @endsection

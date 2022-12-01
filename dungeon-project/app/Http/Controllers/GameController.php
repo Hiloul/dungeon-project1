@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rule;
 use Illuminate\Http\Request;
 use App\Models\Character;
+use Illuminate\Support\Facades\Redirect;
 
 class GameController extends Controller
 {
@@ -67,8 +68,10 @@ class GameController extends Controller
             'pv' => $request->input('pv'),
             'user_id'=>Auth::user()->id,
         ]);
-        $pageAccueil = route('personnage.create');
-        return redirect($pageAccueil)->with('message', 'Créer avec succès');
+        $id = Auth::id();
+        $personnage->save();
+      
+        return view('welcome')->with('message', 'Créer avec succès');
     }
 
     /**
@@ -109,6 +112,7 @@ class GameController extends Controller
 
         // validation du formulaire
         $request->validate([
+            
             'nom' => 'required',
             'description' => 'required',
             'specialite' => 'required',

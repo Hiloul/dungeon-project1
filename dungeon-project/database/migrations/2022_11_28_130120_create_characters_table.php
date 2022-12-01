@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use League\CommonMark\Reference\Reference;
 
 return new class extends Migration
 {
@@ -14,18 +15,21 @@ return new class extends Migration
     public function up()
     {
         Schema::create('characters', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
             $table->string('name');
             $table->text('description');
-            $table->text('specialite');
-            $table->text('magie');
-            $table->text('force');
-            $table->text('agilite');
-            $table->text('intelligence');
-            $table->unsignedBigInteger('user_id');
+            $table->integer('specialite');
+            $table->integer('magie');
+            $table->integer('force');
+            $table->integer('agilite');
+            $table->integer('intelligence');
+            $table->integer('user_id')->unique();
             $table->timestamps();
 
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            
+        });
+        Schema::table('characters',function ($table){
+            $table->foreign('user_id')->references('id')->on('characters')->onDelete('cascade');
         });
     }
 
