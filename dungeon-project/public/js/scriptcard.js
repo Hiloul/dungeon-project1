@@ -1,3 +1,43 @@
+const genererInt = {
+    methods: {
+      createTask: function () {
+       this.listOfTodo.push(this.todoTask);
+       this.todoTask = "";
+      }
+    },
+ 
+    data() {
+      return {
+        // addTask: ["COUCOU"],
+        todoTask:"",
+        listOfTodo:[],
+        listOfDoing:[],
+        listOfDone:[],
+        btn:""
+
+      };
+    },
+  };
+
+Vue.createApp(listTask).mount("#root");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 const userListDOM = document.querySelector('#userList');
 
 const playerList = [];

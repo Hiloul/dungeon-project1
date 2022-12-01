@@ -55,19 +55,19 @@
         <input type="number" name="intelligence" readonly value="{{$intelligence}}" placeholder="INT" id="intelligence">
         <label for="pv">PV :</label>
         <input type="number" name="pv" readonly value="{{$pv}}" placeholder="pv" id="pv">
-        <input type="submit" name="" readonly value="generer">
+        <button @click="genererInt">Générer</button>
         {{-- <button>Envoyer</button> --}}
         <input type="submit" value="Envoyer" id="button" />
     </form>
-    champ du store a mettre ici
+   
     <form action="{{ route('personnage.invite') }}" method="get">
     {{ csrf_field() }}
     <input type="email" name="email" />
     <button type="submit">Inviter</button>
 </form>
-<p>Hi,</p>
-<p>Quelqu'un vous a invité  .</p>
-<a href="{{ route('personnage.invite') }}">Click here</a> to activate!
+<p>Hello,</p>
+<p>Quelqu'un vous a invité.</p>
+<a href="{{ route('personnage.invite') }}">Click</a> Pour activer !
 
 
 
