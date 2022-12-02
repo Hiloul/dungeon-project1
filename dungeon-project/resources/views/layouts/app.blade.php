@@ -50,7 +50,8 @@ footer{text-align: center;
     <nav>
     <a href="/personnage/create">Personnages</a>
     <a href="">Equipes</a>
-    <a href="http://127.0.0.1:8000/">Accueil</a>
+    <a href="/2">Invitations</a>
+    <a href="/">Accueil</a>
 </nav>
     <body class="font-sans antialiased">
 

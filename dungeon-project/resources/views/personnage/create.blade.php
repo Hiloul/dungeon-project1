@@ -22,9 +22,14 @@
         </ul>
     @endif
 
-
+<style>
+    h1{font-size: x-large;
+    text-align: center;}
+</style>
 
 <div id="userList"></div>
+
+<h1>Création d'un personnage</h1>
 
 
     <form action="{{ route('personnage.store') }}" method="POST">
@@ -44,7 +49,7 @@
         <option value="berserker">Berserker</option>
         <option value="archer">Archer</option>
         </select>
-        <label for="caracteristiques">Caracteristiques :</label>
+        
         <label for="magie">Magie :</label>
         <input type="number" name="magie" readonly value="{{$magie}}" placeholder="MAG" id="magie">
         <label for="force">Force :</label>
@@ -60,15 +65,7 @@
         <input type="submit" value="Envoyer" id="button" />
     </form>
    
-    <form action="{{ route('personnage.invite') }}" method="get">
-    {{ csrf_field() }}
-    <input type="email" name="email" />
-    <button type="submit">Inviter</button>
-</form>
-<p>Hello,</p>
-<p>Quelqu'un vous a invité.</p>
-<a href="{{ route('personnage.invite') }}">Click</a> Pour activer !
-
+    
 
 
 <script defer src="{{asset('/js/scriptcard.js')}}"></script>

@@ -18,6 +18,7 @@ return new class extends Migration
             $table->unsignedBigInteger('group_id');
             $table->string('nom');
             $table->string('description');
+            $table->integer('nombreplace');
             $table->timestamps();
         });
     }

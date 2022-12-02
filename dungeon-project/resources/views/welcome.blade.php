@@ -75,7 +75,8 @@ footer{
 <nav>
     <a href="/personnage/create">Personnages</a>
     <a href="">Equipes</a>
-    <a href="http://127.0.0.1:8000/">Accueil</a>
+    <a href="/2">Invitations</a>
+    <a href="/">Accueil</a>
 </nav>
             <h1>Dungeon Project</h1>
             <img src="https://e0.pxfuel.com/wallpapers/487/441/desktop-wallpaper-fantasy-mountains-friendship-lock-girl-dragon-elf.jpg" alt="">

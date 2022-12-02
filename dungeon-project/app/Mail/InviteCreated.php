@@ -8,9 +8,9 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
+use App\Models\Invite;
 
 class InviteCreated extends Mailable
-
 {
     use Queueable, SerializesModels;
 
@@ -19,17 +19,15 @@ class InviteCreated extends Mailable
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(Invite $invite)
     {
-        
-          
+        $this->invite = $invite;
     }
     public function build()
-{
-    return $this->from('you@example.com')
-                ->view('emails.invite');
-}
-
+    {
+        return $this->from('you@example.com')
+                    ->view('emails.invite');
+    }
     /**
      * Get the message envelope.
      *
