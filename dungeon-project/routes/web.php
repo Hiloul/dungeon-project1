@@ -34,6 +34,11 @@ Route::put('/personnage/{id}', [GameController::class, 'update'])->name('personn
 Route::delete('/personnage/{id}', [GameController::class, 'destroy'])->name('personnage.destroy');
 Route::get('/personnage/factory', [GameController::class, 'factory']);
 
+Route::get('invite', 'InviteController@invite')->name('invite');
+Route::post('invite', 'InviteController@process')->name('process');
+// {token} is a required parameter that will be exposed to us in the controller method
+Route::get('accept/{token}', 'InviteController@accept')->name('accept');
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
