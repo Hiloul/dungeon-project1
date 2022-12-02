@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\CharacterController;
+use App\Http\Controllers\GroupController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\GameController;
 use Illuminate\Support\Facades\Route;
@@ -33,6 +33,11 @@ Route::get('/personnage/{id}/edit', [GameController::class, 'edit'])->name('pers
 Route::put('/personnage/{id}', [GameController::class, 'update'])->name('personnage.update');
 Route::delete('/personnage/{id}', [GameController::class, 'destroy'])->name('personnage.destroy');
 Route::get('/personnage/factory', [GameController::class, 'factory']);
+
+//route equipe
+Route::get('/equipe/create', [GroupController::class, 'create'])->name('equipe.create')->where('id', '[0-9]+');
+Route::post('/equipe', [GroupController::class, 'store'])->name('equip.store');
+Route::get('/equipe/{id}', [GroupController::class, 'show'])->name('equipe.show');
 
 //route invite
 Route::get('/personnage/invite', [InviteController::class, 'invite'])->name('personnage.invite');

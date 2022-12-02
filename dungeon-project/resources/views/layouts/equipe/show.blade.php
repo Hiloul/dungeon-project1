@@ -19,8 +19,8 @@
 @section('principale')
 <div class="cadperso">
     <h1>Fiche Equipe</h1>
-    <h3>Nom de l'équipe: {{ $perso->nom }}</h3>
-    <p>Description: {{ $perso->description }}</p>
-    <p> Nombres de places: {{ $perso->specialite }}</p>
+    <h3>Nom de l'équipe: {{ $group->nom }}</h3>
+    <p>Description: {{ $group->description }}</p>
+    <p> Nombres de places: {{ $group->nombreplace }}</p>
     </div>
 @endsection
