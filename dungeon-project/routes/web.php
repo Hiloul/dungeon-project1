@@ -36,7 +36,7 @@ Route::get('/personnage/factory', [GameController::class, 'factory']);
 
 //route equipe
 Route::get('/equipe/create', [GroupController::class, 'create'])->name('equipe.create')->where('id', '[0-9]+');
-Route::post('/equipe', [GroupController::class, 'store'])->name('equip.store');
+Route::post('/equipe', [GroupController::class, 'store'])->name('equipe.store');
 Route::get('/equipe/{id}', [GroupController::class, 'show'])->name('equipe.show');
 
 //route invite

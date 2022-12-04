@@ -33,9 +33,9 @@
 <form action="{{ route('equipe.store') }}" method="POST">
 
 <label for="nom">Nom :</label>
-        <input type="text" name="nom" value="" id="nom" placeholder="Votre nom" />
+        <input type="text" name="nom" value="{{$nom}}" id="nom" placeholder="Votre nom" />
 <label for="description">Description: </label>
-<textarea name="description" id="description" cols="15" rows="5"></textarea>
+<textarea name="description" id="description" cols="15" rows="5" value="{{$description}}"></textarea>
 <label for="">Nombres de places: </label>
 <input type="nombreplace" name="nombreplace" value="{{$nombreplace}}" placeholder="nombres de places" id="nombreplace">
 <input type="submit">

@@ -57,7 +57,7 @@ class GroupController extends Controller
     public function show($id)
     {
         $group = Equipe::findOrFail($id);
-        return view('equipe.show', [ 'perso' => $group ]);
+        return view('equipe.show', [ 'group' => $group ]);
     }
 
 
