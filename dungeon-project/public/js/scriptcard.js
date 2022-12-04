@@ -1,43 +1,10 @@
-const genererInt = {
-    methods: {
-      createTask: function () {
-       this.listOfTodo.push(this.generate);
-       this.generate = "";
-      }
-    },
- 
-    data() {
-      return {
-        // addTask: ["COUCOU"],
-        generate:"",
-        btn:""
-
-      };
-    },
-  };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 const userListDOM = document.querySelector('#userList');
 
-const playerList = [];
+const playerList = []
+// index                 0          1         2
+// playerList[0] // ThomasDu33
+// playerList[1] // John
+// playerList[2] // RoxerGamerDu13
 
 function showPlayerCardListInDOM(){
     userListDOM.innerHTML = ""
@@ -49,8 +16,8 @@ function showPlayerCardListInDOM(){
         playerCard.classList.add("player")
     
         playerCard.innerHTML = `
-            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/${player.specialite}.png" />
-            <p>${player.nom()}</p>
+            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/${player.type}.png" />
+            <p>${player.description()}</p>
             <p class="level">lvl: ${player.level}</p>
             <div class="xp">
                 xp: ${player.xp}
@@ -80,29 +47,28 @@ showPlayerCardListInDOM()
 // select form
 const form = document.querySelector('form')
 // add event listener form submit
-form.addEventListener('generer', function(event){
+form.addEventListener('submit', function(event){
     event.preventDefault()
-    console.log("form generer")
+    console.log("form submit")
     // select input
-    const inputNom = document.querySelector('#nom')
-    
+    const inputPseudo = document.querySelector('#pseudo')
     // get value of input
-    const nomValue = inputNom.value
-   
+    const pseudoValue = inputPseudo.value
+
     // select #type
-    const selectSpecialite = document.querySelector('#specialite')
+    const selectType = document.querySelector('#type')
     // get value of #type
-    const specialiteValue = selectSpecialite.value
-    console.log("specialiteValue : ", specialiteValue)
+    const typeValue = selectType.value
+    console.log("typeValue : ", typeValue)
     
 
     const player = {
-        nom: NomValue,
-        specialite: specialiteValue, // replace value in attribut type in object
+        pseudo: pseudoValue,
+        type: typeValue, // replace value in attribut type in object
         level: 1,
         xp: 0,
         description: function(){
-            return `${this.nom}`
+            return `${this.pseudo} is a ${this.type}`
         },
         upgradeXp: function(){
             this.xp += 10

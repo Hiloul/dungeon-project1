@@ -24,8 +24,8 @@ button{cursor: pointer;}
 
 <h1>Formulaire d'invitation</h1>
 
-<form action="{{ route('personnage.invite') }}" method="get">
-    {{ csrf_field() }}
+<form action="{{ route('personnage.create') }}" method="get">
+@csrf
     <input type="email" name="email" />
     <button type="submit">Inviter</button>
 </form>

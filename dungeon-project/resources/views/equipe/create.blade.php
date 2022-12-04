@@ -32,15 +32,15 @@
 <h1>Création d'une équipe</h1>
 
 <form action="{{ route('equipe.store') }}" method="POST">
-
+@csrf
 <label for="nom">Nom :</label>
         <input type="text" name="nom"  id="nom" placeholder="Votre nom" />
 <label for="description">Description: </label>
 <textarea name="description" id="description" placeholder="Décrivez votre equipe..."></textarea>
 <label for="">Nombres de places: </label>
-<input type="nombreplace" name="nombreplace" placeholder="nombres de places" id="nombreplace">
+<input type="nombreplace" name="nombreplace" placeholder="nombres de places" id="nombreplace"/>
 {{-- <button>Envoyer</button> --}}
-        <input type="submit" value="Envoyer" id="button" />
+        <input type="submit" value="Créer" id="button" />
 
 </form>
 

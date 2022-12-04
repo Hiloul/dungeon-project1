@@ -21,7 +21,7 @@ public function process(Request $request)
     // validate the incoming request data
     do {
         //generate a random string using Laravel's str_random helper
-        $token = str();
+        $token = "";
     } //check if the token already exists and if it does, try again
     while (Invite::where('token', $token)->first());
     //create a new invite record

@@ -69,7 +69,7 @@
     </form>
    
     
-
+  
 
 <script defer src="{{asset('/js/scriptcard.js')}}"></script>
 @endsection

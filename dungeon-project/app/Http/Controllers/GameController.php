@@ -16,7 +16,7 @@ class GameController extends Controller
     public function index()
     {
         return view('personnage.index', [
-            'personnage' => Character::all()
+            'personnages' => Character::all()
         ]);
     }
 
@@ -91,11 +91,10 @@ class GameController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Request $request)
+    public function edit($id)
     {
-        return view('profile.edit', [
-            'user' => $request->user(),
-        ]);
+        $perso = Character::findOrFail($id);
+        return view('personnage.edit', [ 'perso' => $perso ]);
     }
     /**
      * Update the specified resource in storage.

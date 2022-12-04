@@ -2,15 +2,16 @@
 
 @section('title', 'Liste des articles')
 
-@section('main')
+@section('principale')
     @if(session()->has('message'))
         <div>
             {{ session()->get('message') }}
         </div>
     @endif
-    <ul>
-        @foreach ($persos as $perso)
-            <li>{{ $perso->nom }}</li>
-        @endforeach
-    </ul>
+
+    @section('title', 'L\'article ')
+
+    @foreach($users->characters as $character)
+          {{ $perso->nom }}
+      @endforeach
 @endsection
