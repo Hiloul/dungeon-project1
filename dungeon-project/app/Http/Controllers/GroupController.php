@@ -15,7 +15,9 @@ class GroupController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {  
+    { 
+      
+       
         return view('equipe.create');
     }
 
@@ -33,16 +35,15 @@ class GroupController extends Controller
             'nombreplace' => 'required|integer',
         ]);
         
-        $personnage = Equipe::create([
+        $group = Equipe::create([
             'id' => $request->input('user'),
             'nom' => $request->input('nom'),
             'description' => $request->input('description'),
             'nombreplace' => $request->input('nombreplace'),
-            'pv' => $request->input('pv'),
             'group_id'=>Auth::user()->id,
         ]);
         $id = Auth::id();
-        $personnage->save();
+        $group->save();
       
         return view('welcome')->with('message', 'Créer avec succès');
     }
