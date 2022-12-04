@@ -25,6 +25,9 @@
 <style>
     h1{font-size: x-large;
     text-align: center;}
+    textarea{resize: none;
+    outline: none;}
+    form{outline-style: none;}
 </style>
 
 <div id="userList"></div>
@@ -38,7 +41,7 @@
         <label for="nom">Pseudo :</label>
         <input type="text" name="nom" value="" id="nom" placeholder="Votre pseudo" />
         <label for="description">Description :</label>
-        <input type="text" name="description" id="description" placeholder="Description" />
+        <textarea name="description" id="description" placeholder="Description" ></textarea>
         <label for="specialite">Specialite :</label>
         <select name="specialite" value="" id="specialite">
         <option value="">--Choisissez votre personnage--</option>

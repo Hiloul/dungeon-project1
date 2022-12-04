@@ -1,3 +1,17 @@
+<style>
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-bottom: 50px;
+}
+</style>
+<nav>
+    <a href="/personnage/create">Personnages</a>
+    <a href="/equipe/create">Equipes</a>
+    <a href="/2">Invitations</a>
+    <a href="/">Accueil</a>
+</nav>
 <x-guest-layout>
     <x-auth-card>
         <x-slot name="logo">

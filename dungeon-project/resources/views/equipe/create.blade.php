@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Création d\'un personnage')
+@section('title', 'Création d\'une equipe')
 
 
 @section('principale')
@@ -25,6 +25,7 @@
 <style>
     h1{font-size: x-large;
     text-align: center;}
+    textarea{resize: none;}
 </style>
 
 
@@ -33,12 +34,13 @@
 <form action="{{ route('equipe.store') }}" method="POST">
 
 <label for="nom">Nom :</label>
-        <input type="text" name="nom" value="{{$nom}}" id="nom" placeholder="Votre nom" />
+        <input type="text" name="nom"  id="nom" placeholder="Votre nom" />
 <label for="description">Description: </label>
-<textarea name="description" id="description" cols="15" rows="5" value="{{$description}}"></textarea>
+<textarea name="description" id="description" placeholder="Décrivez votre equipe..."></textarea>
 <label for="">Nombres de places: </label>
-<input type="nombreplace" name="nombreplace" value="{{$nombreplace}}" placeholder="nombres de places" id="nombreplace">
-<input type="submit">
+<input type="nombreplace" name="nombreplace" placeholder="nombres de places" id="nombreplace">
+{{-- <button>Envoyer</button> --}}
+        <input type="submit" value="Envoyer" id="button" />
 
 </form>
 

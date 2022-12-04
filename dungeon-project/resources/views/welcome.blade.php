@@ -74,7 +74,7 @@ footer{
             @endif
 <nav>
     <a href="/personnage/create">Personnages</a>
-    <a href="">Equipes</a>
+    <a href="/equipe/create">Equipes</a>
     <a href="/2">Invitations</a>
     <a href="/">Accueil</a>
 </nav>
