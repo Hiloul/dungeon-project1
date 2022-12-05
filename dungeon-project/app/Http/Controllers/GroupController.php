@@ -9,6 +9,13 @@ use Illuminate\Support\Facades\Auth;
 class GroupController extends Controller
 {
  
+   public function index()
+   {
+       return view('equipe.index', [
+           'personnages' => Equipe::all()
+       ]);
+   }
+
     /**
      * Show the form for creating a new resource.
      *

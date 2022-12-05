@@ -1,6 +1,5 @@
 @extends('layouts.app')
 
-@section('title', 'Liste des articles')
 
 @section('principale')
     @if(session()->has('message'))
@@ -8,10 +7,8 @@
             {{ session()->get('message') }}
         </div>
     @endif
-
-   
-
-    @foreach($equipes as $equipe)
+    
+    @foreach($characters as $group)
           {{ $group->nom }}
       @endforeach
 @endsection

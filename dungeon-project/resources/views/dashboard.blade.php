@@ -28,8 +28,9 @@
 
 @section('principale')
 <div class="cadperso">
-    <a href="">Mes personnages</a>
-   <a href="">Mes équipes</a>
+    <a href="/personnage">Mes personnages</a>
+   <a href="/equipe">Mes équipes</a>
+   <a href="/2">Mes invitations</a>
     
     </div>
 @endsection

@@ -29,13 +29,13 @@ Route::get('/personnage', [GameController::class, 'index'])->name('personnage.in
 Route::get('/personnage/create', [GameController::class, 'create'])->name('personnage.create')->where('id', '[0-9]+');
 Route::post('/personnage', [GameController::class, 'store'])->name('personnage.store');
 Route::get('/personnage/{id}', [GameController::class, 'show'])->name('personnage.show');
-Route::get('/personnage/{id}/edit', [GameController::class, 'edit'])->name('personnage.edit');
-Route::put('/personnage/{id}', [GameController::class, 'update'])->name('personnage.update');
+Route::get('/personnage/{id}/edit', [GameController::class, 'edit'])->name('personnage.edit')->where('id', '[0-9]+');
+Route::put('/personnage/{id}', [GameController::class, 'update'])->name('personnage.update')->where('id', '[0-9]+');
 Route::delete('/personnage/{id}', [GameController::class, 'destroy'])->name('personnage.destroy');
 Route::get('/personnage/factory', [GameController::class, 'factory']);
 
 //route equipe
-Route::get('/personnage', [GroupController::class, 'index'])->name('equipe.index');
+Route::get('/equipe', [GroupController::class, 'index'])->name('equipe.index');
 Route::get('/equipe/create', [GroupController::class, 'create'])->name('equipe.create')->where('id', '[0-9]+');
 Route::post('/equipe', [GroupController::class, 'store'])->name('equipe.store');
 Route::get('/equipe/{id}', [GroupController::class, 'show'])->name('equipe.show');

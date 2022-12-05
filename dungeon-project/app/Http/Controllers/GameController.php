@@ -114,22 +114,12 @@ class GameController extends Controller
             'nom' => 'required',
             'description' => 'required',
             'specialite' => 'required',
-            'magie' => 'required|integer',
-            'force' => 'required|integer',
-            'agilite' => 'required|integer',
-            'intelligence' => 'required|integer',
-            'pv' => 'required|integer'
         ]);
 
         // Mise à jour de l'objet
         $perso->nom = $request->input('nom');
         $perso->description = $request->input('description');
         $perso->specialite = $request->input('specialite');
-        $perso->magie = $request->input('magie');
-        $perso->force = $request->input('force');
-        $perso->agilite = $request->input('agilite');
-        $perso->intelligence = $request->input('intelligence');
-        $perso->pv = $request->input('pv');
         
 
         // Enregistrement
