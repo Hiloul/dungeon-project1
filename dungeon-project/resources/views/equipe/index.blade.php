@@ -9,9 +9,9 @@
         </div>
     @endif
 
-    @section('title', 'L\'article ')
+   
 
-    @foreach($characters as $character)
-          {{ $perso->nom }}
+    @foreach($equipes as $equipe)
+          {{ $group->nom }}
       @endforeach
 @endsection

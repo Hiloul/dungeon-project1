@@ -42,8 +42,10 @@
         <input type="text" name="nom" value="" id="nom" placeholder="Votre pseudo" />
         <label for="description">Description :</label>
         <textarea name="description" id="description" placeholder="Description" ></textarea>
+        
         <label for="specialite">Specialite :</label>
         <select name="specialite" value="" id="specialite">
+
         <option value="">--Choisissez votre personnage--</option>
         <option value="guerrier">Guerrier</option>
         <option value="mage">Mage</option>
